@@ -79,7 +79,7 @@ def mstar(n, start, goal, broken=(), edge_weight=1.0, edge_margin=1, penalty=100
             result["blocked"].append(nxt)
             weights[nxt] = weights.get(nxt, 0) + penalty
             result["replans"] += 1
-            path = _astar(n, pos, goal, weights)
+            path = _astar(n, start, goal, weights)
             if path is None:
                 return result
         else:
